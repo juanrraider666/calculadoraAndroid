@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CalculadoraJava</string>
+    <string name="app_splash_welcome">Bienvenido!</string>
+    <string name="app_splash_info">Calculadora</string>
+</resources>
