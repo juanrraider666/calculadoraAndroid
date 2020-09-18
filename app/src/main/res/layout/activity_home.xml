@@ -5,111 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_weight="2"
     tools:context=".HomeActivity">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2.1"
-        android:id="@+id/editText1"
-        android:fontFamily="sans-serif-light"
-        android:gravity="end|bottom"
-        android:maxLines="1"
-        android:textSize="@dimen/formula_text_size"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textAlignment="textEnd"
-     />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2.1"
-        android:id="@+id/editText2"
-        android:fontFamily="sans-serif-light"
-        android:gravity="end|bottom"
-        android:maxLines="1"
-        android:textSize="@dimen/formula_text_size"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textAlignment="textEnd"
-        />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="limpiar"
-        android:id="@+id/clear"
-        android:layout_below="@+id/editText2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="onClick" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/backSpace"
-        android:text="borrar"
-        android:layout_alignBottom="@+id/clear"
-        android:layout_toRightOf="@+id/clear"
-        android:layout_toEndOf="@+id/clear"
-        android:onClick="onClick" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="2"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn_percent"
-            style="@style/ButtonRight"
-            android:onClick="onClick"
+        <!-- Main Content View -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_view"
+            android:background="@color/ColorCardOne"
+            android:padding="20dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="%" />
+            >
 
-        <Button
-            android:id="@+id/btn_power"
-            style="@style/ButtonRight"
-            android:onClick="onClick"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="^" />
+            <TextView
+                android:id="@+id/info_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/roboto_mono_bold"
+                android:padding="40dp"
+                android:text="SELECCIONA UNA OPCIÓN "
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="20dp"
+                tools:layout_editor_absoluteY="20dp" />
 
-        <Button
-            android:id="@+id/btn_root"
-            style="@style/ButtonRight"
-            android:onClick="onClick"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="√" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="200px"
+                android:layout_marginLeft="540px"
+                android:text="by @papiJuan "
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <Button
-            android:id="@+id/btn_clear"
-            style="@style/ButtonRight"
-            android:onClick="onClick"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="C" />
 
-        <Button
-            android:id="@+id/btn_reset"
-            style="@style/ButtonCenter"
-            android:onClick="onClick"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="AC"
-            android:visibility="gone" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -118,41 +56,63 @@
         android:layout_weight="2"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn_7"
-            style="@style/ButtonCenter"
-            android:onClick="onClick"
+        <!-- Main Content View -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view1"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="7" />
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:elevation="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="16dp">
 
-        <Button
-            android:id="@+id/btn_8"
-            style="@style/ButtonCenter"
-            android:onClick="onClick"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="8" />
+            <TextView
+                android:id="@+id/info_text2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/ColorCardFour"
+                android:fontFamily="@font/roboto_mono_bold"
+                android:gravity="center"
+                android:text="CALCULADORA ESTANDAR"
+                android:textAlignment="center" />
 
-        <Button
-            android:id="@+id/btn_9"
-            style="@style/ButtonCenter"
-            android:onClick="onClick"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="9" />
 
-        <Button
-            android:id="@+id/btn_divide"
-            style="@style/ButtonRight"
-            android:onClick="onClick"
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+        <!-- Main Content View -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view2"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:background="@color/ColorCardThree"
+            android:elevation="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="16dp"
+            android:layout_gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="÷" />
+            android:layout_height="100dp"
+            >
+
+            <TextView
+                android:id="@+id/info_text3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/ColorCardThree"
+                android:fontFamily="@font/roboto_mono_bold"
+                android:gravity="center"
+                android:text="CONVERSION DE UNIDADES"
+                android:textAlignment="center" />
+        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
 
     <LinearLayout
@@ -161,127 +121,31 @@
         android:layout_weight="2"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn_4"
-            style="@style/ButtonCenter"
-            android:onClick="onClick"
+        <!-- Main Content View -->
+        <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:id="@+id/card_view4"
+            android:background="@color/ColorCardFour"
+            android:elevation="16dp"
+            app:cardElevation="16dp"
+            app:cardCornerRadius="39dp"
+            android:layout_gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="4" />
+            android:layout_height="100dp"
+            >
 
-        <Button
-            android:id="@+id/btn_5"
-            style="@style/ButtonCenter"
-            android:onClick="onClick"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="5" />
+            <TextView
+                android:id="@+id/info_text4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/ColorCardTwo"
+                android:fontFamily="@font/roboto_mono_bold"
+                android:gravity="center"
+                android:text="CALCULADORA CIENTFICIA"
+                android:textAlignment="center" />
+        </androidx.cardview.widget.CardView>
 
-        <Button
-            android:id="@+id/btn_6"
-            style="@style/ButtonCenter"
-            android:onClick="onClick"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="6" />
-
-        <Button
-            android:id="@+id/btn_multiply"
-            style="@style/ButtonRight"
-            android:onClick="onClick"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="*" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_1"
-            style="@style/ButtonCenter"
-            android:onClick="onClick"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="1" />
-
-        <Button
-            android:id="@+id/btn_2"
-            style="@style/ButtonCenter"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="onClick"
-            android:text="2" />
-
-        <Button
-            android:id="@+id/btn_3"
-            style="@style/ButtonCenter"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="onClick"
-            android:text="3" />
-
-        <Button
-            android:id="@+id/btn_minus"
-            style="@style/ButtonRight"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="onClick"
-            android:text="-" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_0"
-            style="@style/ButtonCenter"
-            android:onClick="onClick"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="0" />
-
-        <Button
-            android:id="@+id/btn_decimal"
-            style="@style/ButtonCenter"
-            android:onClick="onClick"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="." />
-
-        <Button
-            android:id="@+id/btn_equals"
-            style="@style/ButtonCenter"
-            android:onClick="onClick"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="=" />
-
-        <Button
-            android:id="@+id/btn_plus"
-            style="@style/ButtonRight"
-            android:onClick="onClick"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="+" />
     </LinearLayout>
 
 </LinearLayout>
