@@ -1,13 +1,11 @@
 package com.example.calculadorajava;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -24,16 +22,18 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.card_view1:
                         Intent goBasicCal = new Intent(HomeActivity.this, BasicCalculatorActivity.class);
                         startActivity(goBasicCal);
+                        Toast.makeText(HomeActivity.this, "Bienvenido a Calculadora Basica", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.card_view2:
-//                        Toast.makeText(HomeActivity.this, "Hola mona2", Toast.LENGTH_SHORT).show();
                         Intent goConversionUnits = new Intent(HomeActivity.this, ConversionUnitsActivity.class);
                         startActivity(goConversionUnits);
+                        Toast.makeText(HomeActivity.this, "Bienvenido a Calculadora Converion de unidades", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.card_view4:
                         Intent goScientific = new Intent(HomeActivity.this, CientificActivity.class);
+                        Toast.makeText(HomeActivity.this, "Bienvenido a Calculadora Cientifica", Toast.LENGTH_SHORT).show();
                         startActivity(goScientific);
                         break;
                 }

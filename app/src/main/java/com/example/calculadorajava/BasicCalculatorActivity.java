@@ -1,10 +1,16 @@
 package com.example.calculadorajava;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import com.example.calculadorajava.core.doubleEvaluator;
+import com.example.calculadorajava.core.helper;
 
 public class BasicCalculatorActivity extends AppCompatActivity {
 
@@ -13,14 +19,33 @@ public class BasicCalculatorActivity extends AppCompatActivity {
     private String expression="";
     private String text="";
     private Double result=0.0;
+    private helper dbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic_calculator);
 
-        e1=findViewById(R.id.editText1);
+        e1= findViewById(R.id.editText1);
         e2=findViewById(R.id.editText2);
+
+        setProprietiesEditText(false, false);
+
+        dbHelper= new helper(this);
+        e2.setText("0");
     }
+
+
+    public void setProprietiesEditText(boolean edit1, boolean edit2)
+    {
+        e1.requestFocus();
+        e1.setShowSoftInputOnFocus(edit1);
+
+        e2.requestFocus();
+        e2.setShowSoftInputOnFocus(edit2);
+
+    }
+
     public void onClick(View v)
     {
         switch(v.getId())
@@ -151,33 +176,33 @@ public class BasicCalculatorActivity extends AppCompatActivity {
                 operationClicked("*");
                 break;
 
-//            case R.id.btn_sqrt:
-//                if(e2.length()!=0)
-//                {
-//                    text=e2.getText().toString();
-//                    e2.setText("sqrt(" + text + ")");
-//                }
-//                break;
-//
-//            case R.id.square:
-//                if(e2.length()!=0)
-//                {
-//                    text=e2.getText().toString();
-//                    e2.setText("("+text+")^2");
-//                }
-//                break;
+            case R.id.sqrt:
+                if(e2.length()!=0)
+                {
+                    text=e2.getText().toString();
+                    e2.setText("sqrt(" + text + ")");
+                }
+                break;
 
-//            case R.id.posneg:
-//                if(e2.length()!=0)
-//                {
-//                    String s=e2.getText().toString();
-//                    char arr[]=s.toCharArray();
-//                    if(arr[0]=='-')
-//                        e2.setText(s.substring(1,s.length()));
-//                    else
-//                        e2.setText("-"+s);
-//                }
-//                break;
+            case R.id.square:
+                if(e2.length()!=0)
+                {
+                    text=e2.getText().toString();
+                    e2.setText("("+text+")^2");
+                }
+                break;
+
+            case R.id.posneg:
+                if(e2.length()!=0)
+                {
+                    String s=e2.getText().toString();
+                    char arr[]=s.toCharArray();
+                    if(arr[0]=='-')
+                        e2.setText(s.substring(1,s.length()));
+                    else
+                        e2.setText("-"+s);
+                }
+                break;
 
             case R.id.btn_equals:
                 /*for more knowledge on DoubleEvaluator and its tutorial go to the below link
@@ -190,15 +215,15 @@ public class BasicCalculatorActivity extends AppCompatActivity {
                 e1.setText("");
                 if(expression.length()==0)
                     expression="0.0";
-//                DoubleEvaluator evaluator = new DoubleEvaluator();
+                doubleEvaluator evaluator = new doubleEvaluator();
                 try
                 {
-                    //evaluate the expression
-                    // result=new ExtendedDoubleEvaluator().evaluate(expression);
-                    //insert expression and result in sqlite database if expression is valid and not 0.0
-//                    if(!expression.equals("0.0"))
-//                        dbHelper.insert("STANDARD",expression+" = "+result);
-//                    e2.setText(result+"");
+
+                     result=new doubleEvaluator().evaluate(expression);
+
+                    if(!expression.equals("0.0"))
+                        dbHelper.insert("STANDARD",expression+" = "+result);
+                    e2.setText(result+"");
                 }
                 catch (Exception e)
                 {
@@ -209,14 +234,14 @@ public class BasicCalculatorActivity extends AppCompatActivity {
                 }
                 break;
 
-//            case R.id.openBracket:
-//                e1.setText(e1.getText()+"(");
-//                break;
-//
-//            case R.id.closeBracket:
-//                e1.setText(e1.getText()+")");
-//                break;
-//
+            case R.id.openBracket:
+                e1.setText(e1.getText()+"(");
+                break;
+
+            case R.id.closeBracket:
+                e1.setText(e1.getText()+")");
+                break;
+
 //            case R.id.history:
 //                Intent i=new Intent(this,History.class);
 //                i.putExtra("calcName","STANDARD");

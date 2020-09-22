@@ -31,6 +31,7 @@
         android:gravity="end"/>
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/square"
@@ -42,6 +43,7 @@
         android:textAllCaps="false"/>
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/xpowy"
@@ -53,6 +55,7 @@
         android:textAllCaps="false"/>
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="log"
@@ -64,6 +67,7 @@
         android:textAllCaps="false"/>
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sin"
@@ -75,6 +79,7 @@
         android:textAllCaps="false"/>
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cos"
@@ -86,6 +91,7 @@
         android:textAllCaps="false"/>
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tan"
@@ -110,6 +116,7 @@
         android:onClick="onClick" />
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/factorial"
@@ -121,6 +128,7 @@
         android:textAllCaps="false"/>
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/sqrt"
@@ -132,6 +140,7 @@
         android:textAllCaps="false"/>
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/clear"
@@ -142,6 +151,7 @@
         android:onClick="onClick" />
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/backspace"
@@ -152,6 +162,7 @@
         android:onClick="onClick" />
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pi"
@@ -253,6 +264,7 @@
         android:onClick="onClick" />
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/posneg"
@@ -286,16 +298,21 @@
         android:onClick="onClick" />
 
     <Button
+        android:id="@+id/divide"
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/divide"
-        android:id="@+id/divide"
         android:layout_above="@+id/num6"
-        android:layout_toRightOf="@+id/num9"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="0dp"
         android:layout_toEndOf="@+id/num9"
-        android:onClick="onClick" />
+        android:layout_toRightOf="@+id/num9"
+        android:onClick="onClick"
+        android:text="@string/divide" />
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="x"
@@ -306,6 +323,7 @@
         android:onClick="onClick" />
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-"
@@ -317,6 +335,7 @@
         android:onClick="onClick" />
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+"
@@ -337,6 +356,7 @@
         android:layout_toEndOf="@+id/num0" />
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/openBracket"
@@ -347,6 +367,7 @@
         android:onClick="onClick"/>
 
     <Button
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/closeBracket"
