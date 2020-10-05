@@ -13,7 +13,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/editText1"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText2"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/editText1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textAlignment="textEnd"
@@ -140,38 +140,41 @@
         android:textAllCaps="false"/>
 
     <Button
-        style="@style/NormalButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/clear"
         android:id="@+id/clear"
+        style="@style/NormalButton"
+        android:layout_width="99dp"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/tan"
-        android:layout_toRightOf="@+id/log"
+        android:layout_marginBottom="2dp"
         android:layout_toEndOf="@+id/log"
-        android:onClick="onClick" />
-
-    <Button
-        style="@style/NormalButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/backspace"
-        android:id="@+id/backSpace"
-        android:layout_above="@+id/sqrt"
-        android:layout_toRightOf="@+id/tan"
-        android:layout_toEndOf="@+id/tan"
-        android:onClick="onClick" />
-
-    <Button
-        style="@style/NormalButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/pi"
-        android:id="@+id/pi"
-        android:layout_alignBottom="@+id/sqrt"
-        android:layout_alignLeft="@+id/backSpace"
-        android:layout_alignStart="@+id/backSpace"
+        android:layout_toRightOf="@+id/log"
         android:onClick="onClick"
-        android:textAllCaps="false"/>
+        android:text="@string/clear" />
+
+    <Button
+        android:id="@+id/backSpace"
+        style="@style/NormalButton"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sqrt"
+        android:layout_marginBottom="2dp"
+        android:layout_toEndOf="@+id/tan"
+        android:layout_toRightOf="@+id/tan"
+        android:onClick="onClick"
+        android:text="@string/backspace" />
+
+    <Button
+        android:id="@+id/pi"
+        style="@style/NormalButton"
+        android:layout_width="99dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/backSpace"
+        android:layout_alignLeft="@+id/backSpace"
+        android:layout_alignBottom="@+id/sqrt"
+        android:layout_marginBottom="1dp"
+        android:onClick="onClick"
+        android:text="@string/pi"
+        android:textAllCaps="false" />
 
     <Button
         android:layout_width="wrap_content"
@@ -300,50 +303,52 @@
     <Button
         android:id="@+id/divide"
         style="@style/NormalButton"
-        android:layout_width="wrap_content"
+        android:layout_width="104dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/num6"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginBottom="1dp"
         android:layout_toEndOf="@+id/num9"
         android:layout_toRightOf="@+id/num9"
         android:onClick="onClick"
         android:text="@string/divide" />
 
     <Button
-        style="@style/NormalButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="x"
         android:id="@+id/multiply"
+        style="@style/NormalButton"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/num3"
-        android:layout_alignLeft="@+id/divide"
         android:layout_alignStart="@+id/divide"
-        android:onClick="onClick" />
+        android:layout_alignLeft="@+id/divide"
+        android:layout_marginBottom="1dp"
+        android:onClick="onClick"
+        android:text="x" />
 
     <Button
-        style="@style/NormalButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="-"
         android:id="@+id/minus"
+        style="@style/NormalButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/dot"
-        android:layout_alignLeft="@+id/multiply"
         android:layout_alignStart="@+id/multiply"
-        android:textSize="20dp"
-        android:onClick="onClick" />
+        android:layout_alignLeft="@+id/multiply"
+        android:layout_marginBottom="2dp"
+        android:onClick="onClick"
+        android:text="-"
+        android:textSize="20dp" />
 
     <Button
-        style="@style/NormalButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+"
         android:id="@+id/plus"
-        android:layout_alignBottom="@+id/dot"
-        android:layout_alignLeft="@+id/minus"
+        style="@style/NormalButton"
+        android:layout_width="99dp"
+        android:layout_height="wrap_content"
         android:layout_alignStart="@+id/minus"
-        android:onClick="onClick" />
+        android:layout_alignLeft="@+id/minus"
+        android:layout_alignBottom="@+id/dot"
+        android:onClick="onClick"
+        android:text="+" />
 
     <Button
         android:layout_width="wrap_content"
